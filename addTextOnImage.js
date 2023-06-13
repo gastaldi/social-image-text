@@ -1,6 +1,6 @@
 const sharp = require("sharp");
 
-async function addTextOnImage(text) {
+const addTextOnImage = (text) => {
     try {
         // Width of quarkus card is 600px
         const width = 600;
@@ -32,7 +32,7 @@ async function addTextOnImage(text) {
     </svg>
     `;
         const svgBuffer = Buffer.from(svgImage);
-        const image = await sharp("quarkus_card_blank.png")
+        const image = sharp("quarkus_card_blank.png")
             .composite([
                 {
                     input: svgBuffer,
@@ -69,4 +69,5 @@ function splitTextIntoLines(text) {
     return lines;
 }
 
-addTextOnImage("Amazon Lambda with RESTEasy Reactive, Undertow, or Reactive Routes");
+
+addTextOnImage("Protect a web application by using OpenID Connect (OIDC) authorization code flow")
